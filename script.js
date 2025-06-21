@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const addBtn = document.getElementById('add-btn');
     const showList = document.querySelector('#list ul');
    console.log("javascript is running")
-    const list = [];
+
+    const list = JSON.parse(localStorage.getItem('tasks')) || [];
 
     addBtn.addEventListener('click', () => {
         const taskText = displayList.value.trim();
@@ -17,7 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         list.push(preList);
         displayList.value = "";
+        saveTask();
         renderTask();
+        
     });
 
     function renderTask() {
@@ -43,8 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const index = list.findIndex(task => task.id === id);
         if (index !== -1) {
             list.splice(index, 1);
+            saveTask();
             renderTask();
         }
     }
 
+    function saveTask(){
+        localStorage.setItem('tasks',JSON.stringify(list));
+    }
+    renderTask();
 });

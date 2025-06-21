@@ -4,8 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do list</title>
+    <style>
+                body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+        #display {
+            padding: 10px;
+            width: 70%;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        #add-btn {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top:20px;
+        }
+
+        #add-btn:hover {
+            background-color: #45a049;
+        }
+
+        #list {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 10px;
+            border-bottom: 1px solid #eeeeee;
+            font-size: 16px;
+            color: #333333;
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>To do list</h1>
+        <input type="text" id="display" placeholder="Enter the task">
+        <button id="add-btn">Add task</button>
+         <div id="list">
+            <ul> </ul>
+         </div>
+    </div>
 </body>
 </html>
